@@ -1,4 +1,5 @@
 # Script Code
+<b>Copy the Following Code:</b>
 ```
 import urllib.request
 import json
@@ -79,4 +80,5 @@ while True:
 			sys.stdout.write(f"\033[1K\r[!] Cooldown: {i} seconds")
 			sys.stdout.flush()
 			time.sleep(1)
-      ```
+  ```
+<b>Made with 💗 by Dr.Caduceus</b>
