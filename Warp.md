@@ -12,7 +12,7 @@ import sys
 os.system("title UnlimitedWrapUsage")
 os.system('cls' if os.name == 'nt' else 'clear')
 print ("Script by Dr.Caduceus")
-referrer = input("[#] Enter the WARP+ ID: ")
+referrer = input("[#] Enter the WARP/WARP+ ID: ")
 def genString(stringLength):
 	try:
 		letters = string.ascii_letters + string.digits
