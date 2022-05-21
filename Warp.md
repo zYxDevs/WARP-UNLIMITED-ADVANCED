@@ -87,6 +87,7 @@ while True:
 ``WARP_ID`` Enter your WARP/WARP+ ID.<br>
 ``BOT_API_TOKEN`` Telegram Bot Token from BotFather.<br>
 ``CHANNEL_ID`` Channel ID or Group ID like @example or @mychannel to which log needs to be send. Channel or Group should be public.
+``HIDE_ID`` To hide WARP_ID in the log message send to Telegram Channel or Group. 0 for No and 1 for Yes.
   ```
   import urllib.request
 import json
@@ -150,8 +151,11 @@ while True:
   result = run()
   if result == 200:
     g += 1
-    if send_msg == "1":
-        urllib.request.urlopen("https://api.telegram.org/bot"+ BOT_API_KEY + "/sendMessage?chat_id=" + CHANNEL_ID + "&text=" + "WARP%20ID:%20" + WARP_ID + "%20DATA%20RECEIVED:%20" + str(g) + "GB%20FAILED%20ATTEMPTs:%20" + str(b))
+    if(SEND_LOG == "1"):
+			if(HIDE_ID == "1"):
+				urllib.request.urlopen("https://api.telegram.org/bot"+ BOT_TOKEN + "/sendMessage?chat_id=" + CHANNEL_ID + "&text=" + "DATA%20RECEIVED:%20" + str(g) + "GB%20FAILED%20ATTEMPT:%20" + str(b))
+			else:
+				urllib.request.urlopen("https://api.telegram.org/bot"+ BOT_TOKEN + "/sendMessage?chat_id=" + CHANNEL_ID + "&text=" + "WARP%20ID:%20" + referrer + "%20DATA%20RECEIVED:%20" + str(g) + "GB%20FAILED%20ATTEMPT:%20" + str(b))
     print(f"\n[•] WARP+ ID: {WARP_ID}")
     print(f"[✓] Added: {g} GB")
     print(f"[#] Total: {g} Good {b} Bad")
