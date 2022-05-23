@@ -86,7 +86,7 @@ while True:
 ***With Telegram Logger***<br>
 ``WARP_ID`` Enter your WARP/WARP+ ID.<br>
 ``BOT_API_TOKEN`` Telegram Bot Token from BotFather.<br>
-``CHANNEL_ID`` Channel ID or Group ID like @example or @mychannel to which log needs to be send. Channel or Group should be public.
+``CHANNEL_ID`` Channel ID or Group ID like @example or @mychannel to which log needs to be send. Channel or Group should be public.<br>
 ``HIDE_ID`` To hide WARP_ID in the log message send to Telegram Channel or Group. 0 for No and 1 for Yes.
   ```
   import urllib.request
@@ -101,6 +101,7 @@ WARP_ID = input("[#] Enter the WARP/WARP+ ID: ")
 BOT_API_KEY = input("Enter Bot Token.")
 CHANNEL_ID = input("Enter Channel ID.")
 SEND_LOG = "1" # 0 to Disable
+HIDE_ID = "0" # 1 to Enable
 def genString(stringLength):
   try:
     letters = string.ascii_letters + string.digits
